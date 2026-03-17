@@ -74,7 +74,9 @@ Open the web browser at <http://app.meicm.pt>.
 
 Test every functionality and make sure that frontend, API and Redis are working properly.
 
-### Phase 6: Homework: Create Your Own Domain + SSL
+### Homework 1: Create Your Own Domain + SSL
 As an extra exercise, the challenge is to create your own domain and generate SSL certificates to serve the application as HTTPS.
-**Suggestion:** use <duckdns.org> for free domains/sub-domains. It also provides DNS challenge token to generate Let's Encrypt certificates.
+**Suggestion:** use <https://duckdns.org> for free domains/sub-domains. It also provides DNS challenge token to generate Let's Encrypt certificates.
 
+### Homework 2: Dinamically Update the API URL in Frontend
+As another extra exercise, it is pretended to dynamically update the API URL on the HTML webpage based on a provided environment variable.
