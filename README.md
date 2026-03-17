@@ -68,10 +68,11 @@ Now that all services are running, we should configure the different services th
 	5.1. Use the domain ```api.meicm.pt```
 
 ### Phase 5: Validation
-Open the web browser at http://app.meicm.pt
+Open the web browser at <http://app.meicm.pt>.
+
 Test every functionality and make sure that frontend, API and Redis are working properly.
 
 ### Phase 6: Homework: Create Your Own Domain + SSL
 As an extra exercise, the challenge is to create your own domain and generate SSL certificates to serve the application as HTTPS.
-**Suggestion:** use duckdns.org for free domains/sub-domains. It also provides DNS challenge token to generate Let's Encrypt certificates.
+**Suggestion:** use <duckdns.org> for free domains/sub-domains. It also provides DNS challenge token to generate Let's Encrypt certificates.
 
