@@ -13,12 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Este passo cria uma variável com o meu nome de utilizador em minúsculas
+      # Pega no nome do repositório completo (user/repo) e converte para minúsculas
       - name: Set lower case owner name
         run: |
-          echo "OWNER_LC=${OWNER,,}" >> ${GITHUB_ENV}
-        env:
-          OWNER: ${{ github.repository_owner }}
+          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          echo "repo_path=${REPO_LOWER}" >> $GITHUB_OUTPUT
 
       - uses: docker/login-action@v3
         with:
