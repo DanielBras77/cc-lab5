@@ -13,6 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Este passo cria uma variável com o meu nome de utilizador em minúsculas
+      - name: Set lower case owner name
+        run: |
+          echo "OWNER_LC=${OWNER,,}" >> ${GITHUB_ENV}
+        env:
+          OWNER: ${{ github.repository_owner }}
+
       - uses: docker/login-action@v3
         with:
           registry: ghcr.io
