@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Pega no nome do repositório completo (user/repo) e converte para minúsculas
       - name: Set lower case owner name
+        id: lowercase
         run: |
           REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
           echo "repo_path=${REPO_LOWER}" >> $GITHUB_OUTPUT
@@ -29,10 +29,10 @@ jobs:
         with:
           context: ./api
           push: true
-          tags: ghcr.io/${{ github.actor }}/cloud-api:latest
+          tags: ghcr.io/${{ steps.lowercase.outputs.repo_path }}/cloud-api:latest
 
       - uses: docker/build-push-action@v4
         with:
           context: ./frontend
           push: true
-          tags: ghcr.io/${{ github.actor }}/cloud-frontend:latest
+          tags: ghcr.io/${{ steps.lowercase.outputs.repo_path }}/cloud-frontend:latest
